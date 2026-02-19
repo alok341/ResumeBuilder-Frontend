@@ -1,9 +1,10 @@
 import type { AuthResponse, LoginRequest, RegisterRequest, Resume } from "@/types/resume";
 
-const API_BASE = "http://localhost:8080"; // Change this to your backend URL
+const API_BASE = import.meta.env.VITE_API_BASE || "https://resumebuilder-backend-hiz7.onrender.com";
 
 const getHeaders = (isJson = true): HeadersInit => {
   const headers: HeadersInit = {};
+
   const token = localStorage.getItem("token");
   if (token) headers["Authorization"] = `Bearer ${token}`;
   if (isJson) headers["Content-Type"] = "application/json";
