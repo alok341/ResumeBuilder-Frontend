@@ -1,6 +1,6 @@
 import type { AuthResponse, LoginRequest, RegisterRequest, Resume } from "@/types/resume";
 
-const API_BASE = "https://resumebuilder-backend-hiz7.onrender.com"; // Change this to your backend URL
+const API_BASE = "http://localhost:8080"; // Change this to your backend URL
 
 const getHeaders = (isJson = true): HeadersInit => {
   const headers: HeadersInit = {};
