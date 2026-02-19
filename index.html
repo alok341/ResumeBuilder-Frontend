@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>Resume Builder
+    </title>
+    <meta name="description" content="ATS-Friendly ResumeBuilder" />
+    <meta name="author" content="Lovable" />
+
+    <!-- TODO: Update og:title to match your application name -->
+  
+      <script>
+      (function() {
+        try {
+          const savedSettings = localStorage.getItem('userSettings');
+          if (savedSettings) {
+            const settings = JSON.parse(savedSettings);
+            if (settings.darkMode) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+          } else {
+            // Default to dark mode if no settings
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          // Default to dark mode on error
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
