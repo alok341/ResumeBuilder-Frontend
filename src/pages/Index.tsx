@@ -360,7 +360,7 @@ const closeModal = () => {
           </div>
         </motion.div>
       </section>
-// Template Showcase Section
+
 <section ref={templatesRef} id="templates" className="py-24 bg-muted/30 scroll-mt-20">
   <div className="container mx-auto px-4">
     <motion.div
