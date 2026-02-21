@@ -54,7 +54,26 @@ const Header = () => {
 
         {/* Right side navigation */}
         <nav className="flex items-center gap-2">
-          {/* Premium Badge - Animated for premium users */}
+          {/* Settings Icon - Only visible when NOT logged in */}
+          {!user && (
+            <Link to="/settings">
+              <motion.div
+                whileHover={{ rotate: 45 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="h-9 w-9 rounded-lg hover:bg-primary/10 hover:text-primary transition-all"
+                  title="Settings"
+                >
+                  <SettingsIcon className="h-5 w-5" />
+                </Button>
+              </motion.div>
+            </Link>
+          )}
+
+          {/* Premium Badge - Only for premium users */}
           {user?.subscriptionPlan === "premium" && (
             <motion.div
               initial={{ scale: 0 }}
